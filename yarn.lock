@@ -1935,7 +1935,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/eslint-plugin-query@npm:^4.20.10":
+"@tanstack/eslint-plugin-query@npm:^4.24.11":
   version: 4.24.11
   resolution: "@tanstack/eslint-plugin-query@npm:4.24.11"
   checksum: 2a6a288b885040de9199fa93dbd15e026518ac0943d651b4152ef06506abd135b06c38efc0d8b11a613794cfefc1da8da2abd6b4e44aa8a1a5754f9fffec96b1
@@ -1949,7 +1949,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^4.20.9":
+"@tanstack/react-query@npm:^4.26.0":
   version: 4.26.0
   resolution: "@tanstack/react-query@npm:4.26.0"
   dependencies:
@@ -2536,7 +2536,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:^9.1.0":
+"babel-loader@npm:^9.1.2":
   version: 9.1.2
   resolution: "babel-loader@npm:9.1.2"
   dependencies:
@@ -2630,34 +2630,34 @@ __metadata:
   dependencies:
     "@next/font": ^13.2.3
     "@svgr/webpack": ^6.5.1
-    "@tanstack/eslint-plugin-query": ^4.20.10
-    "@tanstack/react-query": ^4.20.9
+    "@tanstack/eslint-plugin-query": ^4.24.11
+    "@tanstack/react-query": ^4.26.0
     "@types/node": 18.14.6
     "@types/react": 18.0.28
     "@types/react-dom": 18.0.11
     autoprefixer: ^10.4.13
-    babel-loader: ^9.1.0
-    cssnano: ^5.1.14
-    cssnano-preset-advanced: ^5.3.9
+    babel-loader: ^9.1.2
+    cssnano: ^5.1.15
+    cssnano-preset-advanced: ^5.3.10
     eslint: 8.35.0
     eslint-config-next: 13.2.3
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-jest: ^27.1.7
+    eslint-config-prettier: ^8.6.0
+    eslint-plugin-jest: ^27.2.1
     husky: ^8.0.3
-    lru-cache: ^7.14.1
+    lru-cache: ^7.18.2
     next: 13.2.3
     next-pwa: ^5.6.0
     postcss: ^8.4.21
-    prettier: 2.7.1
+    prettier: 2.8.4
     react: 18.2.0
     react-dom: 18.2.0
-    react-hook-form: ^7.41.5
+    react-hook-form: ^7.43.4
     react-hot-toast: ^2.4.0
-    react-number-format: ^5.1.2
-    recoil: ^0.7.6
+    react-number-format: ^5.1.3
+    recoil: ^0.7.7
     sanitize.css: ^13.0.0
     sharp: ^0.31.3
-    tailwindcss: ^3.2.4
+    tailwindcss: ^3.2.7
     typescript: 4.9.5
   languageName: unknown
   linkType: soft
@@ -3095,7 +3095,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano-preset-advanced@npm:^5.3.9":
+"cssnano-preset-advanced@npm:^5.3.10":
   version: 5.3.10
   resolution: "cssnano-preset-advanced@npm:5.3.10"
   dependencies:
@@ -3159,7 +3159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:^5.1.14":
+"cssnano@npm:^5.1.15":
   version: 5.1.15
   resolution: "cssnano@npm:5.1.15"
   dependencies:
@@ -3660,7 +3660,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.5.0":
+"eslint-config-prettier@npm:^8.6.0":
   version: 8.6.0
   resolution: "eslint-config-prettier@npm:8.6.0"
   peerDependencies:
@@ -3737,7 +3737,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^27.1.7":
+"eslint-plugin-jest@npm:^27.2.1":
   version: 27.2.1
   resolution: "eslint-plugin-jest@npm:27.2.1"
   dependencies:
@@ -5281,7 +5281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^7.14.1, lru-cache@npm:^7.7.1":
+"lru-cache@npm:^7.18.2, lru-cache@npm:^7.7.1":
   version: 7.18.2
   resolution: "lru-cache@npm:7.18.2"
   checksum: 51e9c6f960a747cb2ed13dfda4238905a5633c590c0f9e52b0ea971a9660b93c0bbf13a5feac36ef18356736a006259eff9afe8bf57a463ed8f21fbc43720120
@@ -6486,12 +6486,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.7.1":
-  version: 2.7.1
-  resolution: "prettier@npm:2.7.1"
+"prettier@npm:2.8.4":
+  version: 2.8.4
+  resolution: "prettier@npm:2.8.4"
   bin:
     prettier: bin-prettier.js
-  checksum: 55a4409182260866ab31284d929b3cb961e5fdb91fe0d2e099dac92eaecec890f36e524b4c19e6ceae839c99c6d7195817579cdffc8e2c80da0cb794463a748b
+  checksum: c173064bf3df57b6d93d19aa98753b9b9dd7657212e33b41ada8e2e9f9884066bb9ca0b4005b89b3ab137efffdf8fbe0b462785aba20364798ff4303aadda57e
   languageName: node
   linkType: hard
 
@@ -6596,7 +6596,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.41.5":
+"react-hook-form@npm:^7.43.4":
   version: 7.43.4
   resolution: "react-hook-form@npm:7.43.4"
   peerDependencies:
@@ -6624,7 +6624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-number-format@npm:^5.1.2":
+"react-number-format@npm:^5.1.3":
   version: 5.1.3
   resolution: "react-number-format@npm:5.1.3"
   dependencies:
@@ -6674,7 +6674,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recoil@npm:^0.7.6":
+"recoil@npm:^0.7.7":
   version: 0.7.7
   resolution: "recoil@npm:0.7.7"
   dependencies:
@@ -7418,7 +7418,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.4":
+"tailwindcss@npm:^3.2.7":
   version: 3.2.7
   resolution: "tailwindcss@npm:3.2.7"
   dependencies:
