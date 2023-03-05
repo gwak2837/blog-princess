@@ -9,6 +9,7 @@ import {
   SUBJECT,
 } from '@/common/constants'
 import localFont from '@next/font/local'
+import Link from 'next/link'
 import { ReactNode } from 'react'
 
 export const metadata = {
@@ -38,7 +39,7 @@ const myFont = localFont({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={myFont.className}>
+    <html lang="ko-KR" className={myFont.className}>
       <meta property="og:site_name" content={APPLICATION_NAME} />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="ko_KR" />
@@ -69,7 +70,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <meta name="revisit-after" content="3 days" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-      <body>{children}</body>
+      <body>
+        <div className="max-w-screen-lg mx-auto relative">
+          <main className="min-h-screen">{children}</main>
+          <nav className="sticky bottom-0 grid grid-cols-3 justify-center items-center text-center border-t border-pink-300 bg-white">
+            <Link href="/post" className="p-6">
+              다시 쓰기
+            </Link>
+            <Link href="/" className="p-6">
+              원고 작성
+            </Link>
+            <Link href="/image" className="p-6">
+              이미지 생성
+            </Link>
+          </nav>
+        </div>
+      </body>
     </html>
   )
 }
