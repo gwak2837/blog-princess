@@ -1,0 +1,68 @@
+{
+  "name": "blog-princess",
+  "version": "0.1.0",
+  "description": "blog article generator",
+  "homepage": "https://blogprincess.vercel.app",
+  "bugs": {
+    "url": "https://github.com/gwak2837/blog-princess/issues",
+    "email": "gwak2837@kakao.com"
+  },
+  "license": "GPL-3.0-only",
+  "author": "Taeuk Gwak <gwak2837@kakao.com>",
+  "repository": "https://github.com/gwak2837/blog-princess.git",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "clean": "rm -rf .yarn/cache .yarn/unplugged .yarn/install-state.gz out .pnp.*",
+    "format": "prettier . --write",
+    "test": "jest",
+    "postinstall": "husky install"
+  },
+  "dependencies": {
+    "@next/font": "^13.2.3",
+    "@svgr/webpack": "^6.5.1",
+    "@tanstack/react-query": "^4.20.9",
+    "lru-cache": "^7.14.1",
+    "next": "13.2.3",
+    "next-pwa": "^5.6.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.41.5",
+    "react-hot-toast": "^2.4.0",
+    "react-number-format": "^5.1.2",
+    "recoil": "^0.7.6",
+    "sanitize.css": "^13.0.0",
+    "sharp": "^0.31.3"
+  },
+  "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^4.20.10",
+    "@types/node": "18.14.6",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.0",
+    "cssnano": "^5.1.14",
+    "cssnano-preset-advanced": "^5.3.9",
+    "eslint": "8.35.0",
+    "eslint-config-next": "13.2.3",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^27.1.7",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.21",
+    "prettier": "2.7.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "4.9.5"
+  },
+  "private": true,
+  "engines": {
+    "node": "^18.12.1"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
+  "packageManager": "yarn@3.4.1"
+}
