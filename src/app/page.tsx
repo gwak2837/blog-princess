@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import ImageGenerationForm from './ImageGenerationForm'
 import WordForm from './WordForm'
 
 export default function Home() {
@@ -7,7 +8,6 @@ export default function Home() {
     <div>
       <h1 className="mx-2 my-8 text-4xl">원고 작성하기</h1>
       <WordForm />
-
       <h2 className="mx-2 mt-16 mb-6 text-3xl">결과</h2>
       <div className="my-4">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
@@ -19,7 +19,7 @@ export default function Home() {
         versions of Lorem Ipsum.
       </div>
 
-      <button className="p-4 w-full rounded bg-pink-200">이미지 생성하기</button>
+      <ImageGenerationForm />
     </div>
   )
 }

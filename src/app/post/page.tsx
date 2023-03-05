@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import ImageGenerationForm from '../ImageGenerationForm'
 import PostForm from './PostForm'
 
 export default function PostPage() {
@@ -20,7 +21,7 @@ export default function PostPage() {
         versions of Lorem Ipsum.
       </div>
 
-      <button className="p-4 w-full rounded bg-pink-200">이미지 생성하기</button>
+      <ImageGenerationForm />
     </div>
   )
 }

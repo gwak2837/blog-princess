@@ -10,7 +10,7 @@ export default function PostPage() {
       <PostForm />
 
       <h2 className="mx-2 mt-16 mb-6 text-3xl">결과</h2>
-      <Image src="/images/marin.webp" alt="인공지능 생성 이미지" width="1000" height="1000" />
+      <Image src="/images/marin.webp" alt="인공지능 생성 이미지" width="1024" height="1024" />
     </div>
   )
 }
