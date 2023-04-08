@@ -20,3 +20,16 @@ export const postFromPostAtom = atom<Post>({
     content: null,
   },
 })
+
+type Image = {
+  loading: boolean
+  URL: string | null
+}
+
+export const imageFromPostAtom = atom<Image>({
+  key: 'imageFromPostAtom',
+  default: {
+    loading: false,
+    URL: null,
+  },
+})
