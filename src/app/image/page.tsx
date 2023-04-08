@@ -4,9 +4,9 @@ import Link from 'next/link'
 import ImageForm from './ImageForm'
 import ImageFromPost from './ImageFromPost'
 
-export default function PostPage() {
+export default function ImagePage() {
   return (
-    <div className="">
+    <div className="mx-2">
       <h1 className="mx-2 my-8 text-4xl">이미지 생성하기</h1>
       <ImageForm />
 

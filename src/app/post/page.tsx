@@ -7,7 +7,7 @@ import PostFromPost from './PostFromPost'
 
 export default function PostPage() {
   return (
-    <div className="">
+    <div className="mx-2">
       <h1 className="mx-2 my-8 text-4xl">글 다시 쓰기</h1>
       <PostForm />
 

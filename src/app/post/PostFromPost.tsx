@@ -13,7 +13,7 @@ export default function PostFromPost() {
           <div className="w-full h-40 bg-gray-200 rounded animate-pulse"></div>
         </div>
       ) : (
-        content
+        <p className="leading-8">{content}</p>
       )}
     </>
   )

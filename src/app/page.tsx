@@ -6,7 +6,7 @@ import WordForm from './WordForm'
 
 export default function Home() {
   return (
-    <div>
+    <div className="mx-2">
       <h1 className="mx-2 my-8 text-4xl">원고 작성하기</h1>
       <WordForm />
 
