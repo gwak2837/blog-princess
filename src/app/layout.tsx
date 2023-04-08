@@ -12,6 +12,8 @@ import localFont from '@next/font/local'
 import Link from 'next/link'
 import { ReactNode } from 'react'
 
+import RecoilRoot from './RecoilRoot'
+
 export const metadata = {
   title: '블프 - 블로그 프린세스',
   description: '블로그 글 자동 생성기',
@@ -72,7 +74,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
       <body>
         <div className="max-w-screen-lg mx-auto relative">
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen">
+            <RecoilRoot>{children}</RecoilRoot>
+          </main>
           <nav className="sticky bottom-0 grid grid-cols-3 justify-center items-center text-center border-t border-pink-300 bg-white">
             <Link href="/post" className="p-6">
               다시 쓰기
