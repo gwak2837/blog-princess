@@ -116,7 +116,7 @@ export default function WordForm() {
       <label className="my-2 items-center">분야</label>
       <input className="p-2 border" type="text" {...register('domain', { required: true })} />
 
-      <button className="p-4 w-full col-span-2 rounded bg-pink-950">제출</button>
+      <button className="p-4 w-full col-span-2 rounded bg-pink-200">제출</button>
     </form>
   )
 }
