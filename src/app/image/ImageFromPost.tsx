@@ -25,15 +25,7 @@ export default function ImageFromPost() {
           />
           <button
             className="my-4 p-4 w-full col-span-2 rounded bg-pink-200"
-            onClick={() =>
-              URL
-                ? fetch(URL)
-                    .then((response) => response.blob())
-                    .then((blob) => {
-                      saveAs(blob, 'image.jpg')
-                    })
-                : saveAs('/images/marin.webp', 'marin.webp')
-            }
+            onClick={() => saveAs('/images/marin.webp', 'image.jpg')}
           >
             Download
           </button>

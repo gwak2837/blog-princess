@@ -1,9 +1,10 @@
 'use client'
 
 import { NEXT_PUBLIC_BACKEND_URL } from '@/common/constants'
-import { imageFromPostAtom } from '@/common/recoil'
+import { imageFromPostAtom, postFromKeywordsAtom, postFromPostAtom } from '@/common/recoil'
+import { useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
-import { useSetRecoilState } from 'recoil'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
 
 type Form = {
   post: string
@@ -12,9 +13,20 @@ type Form = {
 const defaultPost = `아랍 히잡 시위(Arab Spring)는 2010년부터 2012년까지 중동과 북아프리카 지역에서 일어난 대규모 시민혁명과 민주화 운동을 의미합니다. 이 시위는 이라크와 튀니지에서 시작되어 이후 알제리, 이집트, 리비아, 예멘, 바레인, 시리아 등 다수의 아랍 국가로 확대되었습니다.`
 
 export default function ImageForm() {
+  const searchParams = useSearchParams()
+  const from = searchParams.get('from')
+
+  const { content: postFromKeyword } = useRecoilValue(postFromKeywordsAtom)
+  const { content: postFromPost } = useRecoilValue(postFromPostAtom)
+
   const { handleSubmit, register } = useForm<Form>({
     defaultValues: {
-      post: defaultPost,
+      post:
+        from === 'keyword'
+          ? postFromKeyword ?? ''
+          : from === 'post'
+          ? postFromPost ?? ''
+          : defaultPost,
     },
   })
 

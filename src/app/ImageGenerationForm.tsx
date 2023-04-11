@@ -1,16 +1,19 @@
 'use client'
 
 import { postFromKeywordsAtom } from '@/common/recoil'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useRecoilValue } from 'recoil'
 
 export default function ImageGenerationForm() {
   const router = useRouter()
-  const { content } = useRecoilValue(postFromKeywordsAtom)
+  const pathname = usePathname()
 
   function generateImage() {
-    router.push('/image')
+    if (pathname === '/') router.push('/image?from=keyword')
+    else if (pathname === '/post') router.push('/image?from=post')
   }
+
+  const { content } = useRecoilValue(postFromKeywordsAtom)
 
   return (
     <button
