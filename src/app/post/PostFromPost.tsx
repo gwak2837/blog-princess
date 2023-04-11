@@ -10,7 +10,7 @@ export default function PostFromPost() {
     <>
       {loading ? (
         <div className="flex justify-center items-center">
-          <div className="w-full h-40 bg-gray-200 rounded animate-pulse"></div>
+          <div className="w-full h-80 bg-gray-200 rounded animate-pulse"></div>
         </div>
       ) : (
         <p className="leading-8">{content}</p>

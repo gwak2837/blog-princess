@@ -12,7 +12,7 @@ export default function ImageFromPost() {
     <>
       {loading ? (
         <div className="flex justify-center items-center">
-          <div className="w-full h-40 bg-gray-200 rounded animate-pulse"></div>
+          <div className="w-full h-80 bg-gray-200 rounded animate-pulse"></div>
         </div>
       ) : (
         <div>
