@@ -83,21 +83,21 @@ export default function WordForm() {
         {...register('keywordCount', { required: true })}
       />
 
-      <label className="my-2 items-center">포함하고 싶은 키워드</label>
+      <label className="my-2 items-center">포함하고 싶은 내용</label>
       <input
         className="p-2 border"
         type="text"
         {...register('keywordsThatShouldBeIncluded', { required: true })}
       />
 
-      <label className="my-2 items-center">제외하고 싶은 키워드</label>
+      <label className="my-2 items-center">제외하고 싶은 내용</label>
       <input
         className="p-2 border"
         type="text"
         {...register('keywordsThatShouldBeExcluded', { required: true })}
       />
 
-      <label className="my-2 items-center">최대 글자 수</label>
+      <label className="my-2 items-center">글자 수</label>
       <input
         className="p-2 border"
         min="0"
@@ -105,7 +105,7 @@ export default function WordForm() {
         {...register('maximumLength', { required: true })}
       />
 
-      <label className="my-2 items-center">최대 문단 수</label>
+      <label className="my-2 items-center">문단 수</label>
       <input
         className="p-2 border"
         min="0"
@@ -116,7 +116,7 @@ export default function WordForm() {
       <label className="my-2 items-center">분야</label>
       <input className="p-2 border" type="text" {...register('domain', { required: true })} />
 
-      <button className="p-4 w-full col-span-2 rounded bg-pink-200">제출</button>
+      <button className="p-4 w-full col-span-2 rounded bg-pink-950">제출</button>
     </form>
   )
 }
