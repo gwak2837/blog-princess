@@ -14,7 +14,7 @@ export default function ImageGenerationForm() {
 
   return (
     <button
-      className="p-4 w-full rounded bg-pink-200 disabled:bg-slate-200"
+      className="my-4 p-4 w-full rounded bg-pink-200 disabled:bg-slate-200"
       disabled={!content}
       onClick={generateImage}
     >
