@@ -1,6 +1,7 @@
 'use client'
 
 import { imageFromPostAtom } from '@/common/recoil'
+import { saveAs } from 'file-saver'
 import Image from 'next/image'
 import { useRecoilValue } from 'recoil'
 
@@ -14,12 +15,29 @@ export default function ImageFromPost() {
           <div className="w-full h-40 bg-gray-200 rounded animate-pulse"></div>
         </div>
       ) : (
-        <Image
-          src={URL ?? '/images/marin.webp'}
-          alt="인공지능 생성 이미지"
-          width="1024"
-          height="1024"
-        />
+        <div>
+          <Image
+            src={URL ?? '/images/marin.webp'}
+            alt="인공지능 생성 이미지"
+            className="mx-auto"
+            width="512"
+            height="512"
+          />
+          <button
+            className="my-4 p-4 w-full col-span-2 rounded bg-pink-200"
+            onClick={() =>
+              URL
+                ? fetch(URL)
+                    .then((response) => response.blob())
+                    .then((blob) => {
+                      saveAs(blob, 'image.jpg')
+                    })
+                : saveAs('/images/marin.webp', 'marin.webp')
+            }
+          >
+            Download
+          </button>
+        </div>
       )}
     </>
   )

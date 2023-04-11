@@ -21,10 +21,7 @@ const nextConfig = {
     },
   ],
   images: {
-    remotePatterns: [
-      { protocol: 'https', hostname: 'storage.googleapis.com' },
-      { protocol: 'https', hostname: '**.coupangcdn.com' },
-    ],
+    remotePatterns: [{ protocol: 'https', hostname: 'oaidalleapiprodscus.blob.core.windows.net' }],
   },
   output: 'standalone',
   poweredByHeader: false,
