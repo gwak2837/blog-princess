@@ -21,7 +21,12 @@ export const postFromPostAtom = atom<Post>({
   },
 })
 
-export const blogStatFromKeywordAtom = atom<Post>({
+type BlogStat = {
+  loading: boolean
+  content: Record<string, string> | null
+}
+
+export const blogStatFromKeywordAtom = atom<BlogStat>({
   key: 'blogStatFromKeywordAtom',
   default: {
     loading: false,

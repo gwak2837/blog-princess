@@ -33,7 +33,13 @@ export default function BlogStatForm() {
     })
     const result = await response.json()
 
-    setBlogStatFromKeyword({ loading: false, content: result })
+    setBlogStatFromKeyword({
+      loading: false,
+      content: {
+        blogCount,
+        ...result,
+      },
+    })
   }
 
   return (
