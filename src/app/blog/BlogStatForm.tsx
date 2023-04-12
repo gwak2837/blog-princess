@@ -23,7 +23,7 @@ export default function BlogStatForm() {
   async function submit({ keyword, blogCount }: Form) {
     setBlogStatFromKeyword({ loading: true, content: null })
 
-    const response = await fetch(`${NEXT_PUBLIC_BACKEND_URL}/api/blog`, {
+    const response = await fetch(`${NEXT_PUBLIC_BACKEND_URL}/api/keyword`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
