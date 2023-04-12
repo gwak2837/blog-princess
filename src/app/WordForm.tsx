@@ -14,6 +14,9 @@ type Form = {
   maximumLength: number
   maximumParagraphLength: number
   domain: string
+  sex: number
+  age: number
+  company: string
 }
 
 export default function WordForm() {
@@ -27,6 +30,9 @@ export default function WordForm() {
       maximumLength: 500,
       maximumParagraphLength: 10,
       domain: '핑크 프린세스',
+      sex: 1,
+      age: 20,
+      company: 'SM엔터',
     },
   })
 
@@ -41,6 +47,9 @@ export default function WordForm() {
     maximumLength,
     maximumParagraphLength,
     domain,
+    sex,
+    age,
+    company,
   }: Form) {
     setPostFromKeywords({ loading: true, content: null })
 
@@ -56,6 +65,9 @@ export default function WordForm() {
         text6: maximumLength,
         text7: maximumParagraphLength,
         text8: domain,
+        gender: sex,
+        age: age,
+        company,
       }),
     })
     const result = await response.json()
@@ -66,7 +78,7 @@ export default function WordForm() {
   return (
     <form className="grid grid-cols-[auto_1fr] gap-2 items-center" onSubmit={handleSubmit(submit)}>
       <label className="my-2 items-center">종류</label>
-      <select className="p-2 border" {...register('type')}>
+      <select className="p-2 border" {...register('type', { required: true })}>
         <option value="1">후기성</option>
         <option value="2">정보성</option>
         <option value="3">광고성</option>
@@ -115,6 +127,24 @@ export default function WordForm() {
 
       <label className="my-2 items-center">분야</label>
       <input className="p-2 border" type="text" {...register('domain', { required: true })} />
+
+      <label className="my-2 items-center">성별</label>
+      <select className="p-2 border" {...register('sex')}>
+        <option value="1">남</option>
+        <option value="2">여</option>
+      </select>
+
+      <label className="my-2 items-center">나이</label>
+      <input
+        className="p-2 border"
+        min="0"
+        max="1000"
+        type="number"
+        {...register('age', { required: true })}
+      />
+
+      <label className="my-2 items-center">업체명</label>
+      <input className="p-2 border" type="text" {...register('company', { required: true })} />
 
       <button className="p-4 w-full col-span-2 rounded bg-pink-200">제출</button>
     </form>

@@ -6,8 +6,10 @@ import { useForm } from 'react-hook-form'
 import { useSetRecoilState } from 'recoil'
 
 type Form = {
-  post: string
   postLength: number
+  sex: number
+  age: number
+  post: string
 }
 
 const defaultPost = `내 친구는 정말 멋진 친구야. 먼저, 그녀는 정말로 이해심이 많아서, 언제나 내 곁에서 내 얘기를 들어주고 조언해준다. 예를 들어, 전학을 가게 되어서 처음으로 새로운 학교에 왔을 때, 나는 많이 불안했었어. 그런데 내 친구는 항상 내 곁에서 지지해주고 함께 수업도 듣고 공부도 하면서, 새로운 친구들을 사귀도록 도와주었다.
@@ -21,14 +23,16 @@ const defaultPost = `내 친구는 정말 멋진 친구야. 먼저, 그녀는 �
 export default function PostForm() {
   const { handleSubmit, register } = useForm<Form>({
     defaultValues: {
-      post: defaultPost,
       postLength: 1000,
+      sex: 1,
+      age: 20,
+      post: defaultPost,
     },
   })
 
   const setPostFromPost = useSetRecoilState(postFromPostAtom)
 
-  async function submit({ post, postLength }: Form) {
+  async function submit({ post, postLength, sex, age }: Form) {
     setPostFromPost({ loading: true, content: null })
 
     const response = await fetch(`${NEXT_PUBLIC_BACKEND_URL}/api/text`, {
@@ -37,6 +41,8 @@ export default function PostForm() {
       body: JSON.stringify({
         text: post,
         num: postLength,
+        gender: sex,
+        age: age,
       }),
     })
     const result = await response.json()
@@ -54,10 +60,25 @@ export default function PostForm() {
         {...register('postLength', { required: true })}
       />
 
-      <div className="col-span-2">
+      <label className="my-2 items-center">성별</label>
+      <select className="p-2 border" {...register('sex')}>
+        <option value="1">남</option>
+        <option value="2">여</option>
+      </select>
+
+      <label className="my-2 items-center">나이</label>
+      <input
+        className="p-2 border"
+        min="0"
+        max="1000"
+        type="number"
+        {...register('age', { required: true })}
+      />
+
+      <div className="my-2 col-span-2">
         <label className="my-2 items-center">내용</label>
         <textarea
-          className="my-2 p-2 w-full min-h-[10rem] outline outline-slate-100"
+          className="my-2 p-2 w-full min-h-[20rem] outline outline-slate-100"
           {...register('post')}
         />
       </div>

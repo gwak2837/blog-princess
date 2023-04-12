@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <main className="min-h-screen">
             <RecoilRoot>{children}</RecoilRoot>
           </main>
-          <nav className="sticky bottom-0 grid grid-cols-3 justify-center items-center text-center border-t border-pink-300 bg-white">
+          <nav className="sticky bottom-0 grid grid-cols-4 justify-center items-center text-center border-t border-pink-300 bg-white">
             <Link href="/post" className="p-6">
               다시 쓰기
             </Link>
@@ -86,6 +86,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </Link>
             <Link href="/image" className="p-6">
               이미지 생성
+            </Link>
+            <Link href="/" className="p-6">
+              새로운 기능
             </Link>
           </nav>
         </div>
