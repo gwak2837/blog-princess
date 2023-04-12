@@ -87,8 +87,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Link href="/image" className="p-6">
               이미지 생성
             </Link>
-            <Link href="/" className="p-6">
-              새로운 기능
+            <Link href="/blog" className="p-6">
+              블로그 통계
             </Link>
           </nav>
         </div>

@@ -21,6 +21,14 @@ export const postFromPostAtom = atom<Post>({
   },
 })
 
+export const blogStatFromKeywordAtom = atom<Post>({
+  key: 'blogStatFromKeywordAtom',
+  default: {
+    loading: false,
+    content: null,
+  },
+})
+
 type Image = {
   loading: boolean
   URL: string | null
