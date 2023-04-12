@@ -13,9 +13,11 @@ export default function BlogStat() {
           <div className="w-full h-80 bg-gray-200 rounded animate-pulse"></div>
         </div>
       ) : (
-        <p className="leading-8">
-          <pre>{JSON.stringify(content)}</pre>
-        </p>
+        content && (
+          <p className="leading-8">
+            <pre>{JSON.stringify(content)}</pre>
+          </p>
+        )
       )}
     </>
   )

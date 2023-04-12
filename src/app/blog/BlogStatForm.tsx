@@ -39,12 +39,7 @@ export default function BlogStatForm() {
   return (
     <form className="grid grid-cols-[auto_1fr] gap-2 items-center" onSubmit={handleSubmit(submit)}>
       <label className="my-2 items-center">키워드</label>
-      <input
-        className="p-2 border"
-        min="0"
-        type="number"
-        {...register('keyword', { required: true })}
-      />
+      <input className="p-2 border" type="text" {...register('keyword', { required: true })} />
 
       <label className="my-2 items-center">상위 블로그 수</label>
       <input
