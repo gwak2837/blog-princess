@@ -55,7 +55,7 @@ export default function PostForm() {
 
   return (
     <form className="grid grid-cols-[auto_1fr] gap-2 items-center" onSubmit={handleSubmit(submit)}>
-      <label className="my-2 items-center">최대 글자 수</label>
+      <label className="my-2 items-center">글자 수</label>
       <input
         className="p-2 border"
         min="0"
