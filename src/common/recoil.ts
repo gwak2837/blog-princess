@@ -36,13 +36,13 @@ export const blogStatFromKeywordAtom = atom<BlogStat>({
 
 type Image = {
   loading: boolean
-  URL: string | null
+  URLs: string[] | null
 }
 
 export const imageFromPostAtom = atom<Image>({
   key: 'imageFromPostAtom',
   default: {
     loading: false,
-    URL: null,
+    URLs: null,
   },
 })

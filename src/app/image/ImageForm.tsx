@@ -35,7 +35,7 @@ export default function ImageForm() {
   const setImageFromPost = useSetRecoilState(imageFromPostAtom)
 
   async function submit({ imageCount, post }: Form) {
-    setImageFromPost({ loading: true, URL: null })
+    setImageFromPost({ loading: true, URLs: null })
 
     const response = await fetch(`${NEXT_PUBLIC_BACKEND_URL}/api/image`, {
       method: 'POST',
@@ -47,7 +47,7 @@ export default function ImageForm() {
     })
     const result = await response.json()
 
-    setImageFromPost({ loading: false, URL: result.imageLink })
+    setImageFromPost({ loading: false, URLs: result.imageLink })
   }
 
   return (
