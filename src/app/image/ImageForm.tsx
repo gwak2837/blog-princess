@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 
 type Form = {
+  imageCount: number
   post: string
 }
 
@@ -21,6 +22,7 @@ export default function ImageForm() {
 
   const { handleSubmit, register } = useForm<Form>({
     defaultValues: {
+      imageCount: 2,
       post:
         from === 'keyword'
           ? postFromKeyword ?? ''
@@ -32,13 +34,14 @@ export default function ImageForm() {
 
   const setImageFromPost = useSetRecoilState(imageFromPostAtom)
 
-  async function submit({ post }: Form) {
+  async function submit({ imageCount, post }: Form) {
     setImageFromPost({ loading: true, URL: null })
 
     const response = await fetch(`${NEXT_PUBLIC_BACKEND_URL}/api/image`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        num: imageCount,
         text: post,
       }),
     })
@@ -49,6 +52,14 @@ export default function ImageForm() {
 
   return (
     <form className="grid grid-cols-[auto_1fr] gap-2 items-center" onSubmit={handleSubmit(submit)}>
+      <label className="my-2 items-center">이미지 수</label>
+      <input
+        className="p-2 border"
+        min="0"
+        type="number"
+        {...register('imageCount', { required: true })}
+      />
+
       <div className="col-span-2">
         <label className="my-2 items-center">내용</label>
         <textarea
