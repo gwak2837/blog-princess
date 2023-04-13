@@ -1,7 +1,7 @@
 'use client'
 
 import { NEXT_PUBLIC_BACKEND_URL } from '@/common/constants'
-import { blogStatFromKeywordAtom, postFromPostAtom } from '@/common/recoil'
+import { blogStatFromKeywordAtom } from '@/common/recoil'
 import { useForm } from 'react-hook-form'
 import { useSetRecoilState } from 'recoil'
 
@@ -33,13 +33,7 @@ export default function BlogStatForm() {
     })
     const result = await response.json()
 
-    setBlogStatFromKeyword({
-      loading: false,
-      content: {
-        blogCount,
-        ...result,
-      },
-    })
+    setBlogStatFromKeyword({ loading: false, content: result })
   }
 
   return (

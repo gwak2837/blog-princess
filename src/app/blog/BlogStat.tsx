@@ -16,7 +16,7 @@ export default function BlogStat() {
         content && (
           <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center leading-8">
             <div>상위 블로그 수</div>
-            <div>{content.blogCount}</div>
+            <div>{content.blog_num}</div>
             <div>평균 문단 개수</div>
             <div>{content.aver_text}</div>
             <div>평균 이미지 개수</div>
