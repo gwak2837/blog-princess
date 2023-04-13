@@ -9,8 +9,10 @@ type Form = {
   postLength: number
   sex: number
   age: number
-  post: string
+  job: string
   company: string
+  companyDescription: string
+  post: string
 }
 
 const defaultPost = `내 친구는 정말 멋진 친구야. 먼저, 그녀는 정말로 이해심이 많아서, 언제나 내 곁에서 내 얘기를 들어주고 조언해준다. 예를 들어, 전학을 가게 되어서 처음으로 새로운 학교에 왔을 때, 나는 많이 불안했었어. 그런데 내 친구는 항상 내 곁에서 지지해주고 함께 수업도 듣고 공부도 하면서, 새로운 친구들을 사귀도록 도와주었다.
@@ -27,14 +29,16 @@ export default function PostForm() {
       postLength: 1000,
       sex: 1,
       age: 20,
+      job: '백수',
       post: defaultPost,
       company: '(주)대추야자',
+      companyDescription: '야자만큼 큰 대추를 생산해서 전국민을 먹여살리는 일',
     },
   })
 
   const setPostFromPost = useSetRecoilState(postFromPostAtom)
 
-  async function submit({ post, postLength, sex, age, company }: Form) {
+  async function submit({ post, postLength, sex, age, job, company, companyDescription }: Form) {
     setPostFromPost({ loading: true, content: null })
 
     const response = await fetch(`${NEXT_PUBLIC_BACKEND_URL}/api/text`, {
@@ -44,8 +48,10 @@ export default function PostForm() {
         text: post,
         num: postLength,
         gender: sex,
-        age: age,
+        age,
+        job,
         company,
+        companyDescription,
       }),
     })
     const result = await response.json()
@@ -63,13 +69,13 @@ export default function PostForm() {
         {...register('postLength', { required: true })}
       />
 
-      <label className="my-2 items-center">성별</label>
+      <label className="my-2 items-center">글쓴이 성별</label>
       <select className="p-2 border" {...register('sex')}>
         <option value="1">남</option>
         <option value="2">여</option>
       </select>
 
-      <label className="my-2 items-center">나이</label>
+      <label className="my-2 items-center">글쓴이 나이</label>
       <input
         className="p-2 border"
         min="0"
@@ -78,8 +84,18 @@ export default function PostForm() {
         {...register('age', { required: true })}
       />
 
+      <label className="my-2 items-center">글쓴이 직업</label>
+      <input className="p-2 border" type="text" {...register('job', { required: true })} />
+
       <label className="my-2 items-center">업체명</label>
       <input className="p-2 border" type="text" {...register('company', { required: true })} />
+
+      <label className="my-2 items-center">업체 설명</label>
+      <input
+        className="p-2 border"
+        type="text"
+        {...register('companyDescription', { required: true })}
+      />
 
       <div className="my-2 col-span-2">
         <label className="my-2 items-center">내용</label>

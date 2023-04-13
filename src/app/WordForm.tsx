@@ -16,7 +16,9 @@ type Form = {
   domain: string
   sex: number
   age: number
+  job: string
   company: string
+  companyDescription: string
 }
 
 export default function WordForm() {
@@ -32,7 +34,9 @@ export default function WordForm() {
       domain: '핑크 프린세스',
       sex: 1,
       age: 20,
+      job: '보리 농부',
       company: 'SM엔터',
+      companyDescription: 'SM엔터',
     },
   })
 
@@ -49,7 +53,9 @@ export default function WordForm() {
     domain,
     sex,
     age,
+    job,
     company,
+    companyDescription,
   }: Form) {
     setPostFromKeywords({ loading: true, content: null })
 
@@ -67,7 +73,9 @@ export default function WordForm() {
         text8: domain,
         gender: sex,
         age: age,
+        job,
         company,
+        companyDescription,
       }),
     })
     const result = await response.json()
@@ -128,13 +136,13 @@ export default function WordForm() {
       <label className="my-2 items-center">분야</label>
       <input className="p-2 border" type="text" {...register('domain', { required: true })} />
 
-      <label className="my-2 items-center">성별</label>
+      <label className="my-2 items-center">글쓴이 성별</label>
       <select className="p-2 border" {...register('sex')}>
         <option value="1">남</option>
         <option value="2">여</option>
       </select>
 
-      <label className="my-2 items-center">나이</label>
+      <label className="my-2 items-center">글쓴이 나이</label>
       <input
         className="p-2 border"
         min="0"
@@ -143,8 +151,18 @@ export default function WordForm() {
         {...register('age', { required: true })}
       />
 
-      <label className="my-2 items-center">업체명</label>
+      <label className="my-2 items-center">글쓴이 직업</label>
+      <input className="p-2 border" type="text" {...register('job', { required: true })} />
+
+      <label className="my-2 items-center">업체 이름</label>
       <input className="p-2 border" type="text" {...register('company', { required: true })} />
+
+      <label className="my-2 items-center">업체 설명</label>
+      <input
+        className="p-2 border"
+        type="text"
+        {...register('companyDescription', { required: true })}
+      />
 
       <button className="p-4 w-full col-span-2 rounded bg-pink-200">제출</button>
     </form>
