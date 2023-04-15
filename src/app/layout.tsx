@@ -78,16 +78,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <RecoilRoot>{children}</RecoilRoot>
           </main>
           <nav className="sticky bottom-0 grid grid-cols-4 justify-center items-center text-center border-t border-pink-300 bg-white">
-            <Link href="/post" className="p-6">
+            <Link href="/post" className="p-6 break-keep	">
               다시 쓰기
             </Link>
-            <Link href="/" className="p-6">
+            <Link href="/" className="p-6 break-keep	">
               원고 작성
             </Link>
-            <Link href="/image" className="p-6">
+            <Link href="/image" className="p-6 break-keep	">
               이미지 생성
             </Link>
-            <Link href="/blog" className="p-6">
+            <Link href="/blog" className="p-6 break-keep	">
               블로그 통계
             </Link>
           </nav>
