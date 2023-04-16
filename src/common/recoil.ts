@@ -2,7 +2,7 @@ import { atom } from 'recoil'
 
 type Post = {
   loading: boolean
-  content: string | null
+  content: string[] | null
 }
 
 export const postFromKeywordsAtom = atom<Post>({

@@ -1,8 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { imageFromPostAtom } from '@/common/recoil'
 import { saveAs } from 'file-saver'
-import Image from 'next/image'
 import { useRecoilValue } from 'recoil'
 
 export default function ImageFromPost() {

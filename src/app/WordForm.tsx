@@ -80,7 +80,7 @@ export default function WordForm() {
     })
     const result = await response.json()
 
-    setPostFromKeywords({ loading: false, content: result.new_text })
+    setPostFromKeywords({ loading: false, content: result.new_text.split('\n') })
   }
 
   return (

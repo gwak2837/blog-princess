@@ -21,7 +21,6 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@next/font": "^13.2.3",
     "@svgr/webpack": "^6.5.1",
     "@tanstack/react-query": "^4.26.0",
     "file-saver": "^2.0.5",

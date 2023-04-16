@@ -1,10 +1,11 @@
 'use client'
 
-import { NEXT_PUBLIC_BACKEND_URL } from '@/common/constants'
 import { imageFromPostAtom, postFromKeywordsAtom, postFromPostAtom } from '@/common/recoil'
-import { useSearchParams } from 'next/navigation'
-import { useForm } from 'react-hook-form'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
+
+import { NEXT_PUBLIC_BACKEND_URL } from '@/common/constants'
+import { useForm } from 'react-hook-form'
+import { useSearchParams } from 'next/navigation'
 
 type Form = {
   imageCount: number
@@ -25,9 +26,9 @@ export default function ImageForm() {
       imageCount: 2,
       post:
         from === 'keyword'
-          ? postFromKeyword ?? ''
+          ? postFromKeyword?.join('\n') ?? ''
           : from === 'post'
-          ? postFromPost ?? ''
+          ? postFromPost?.join('\n') ?? ''
           : defaultPost,
     },
   })

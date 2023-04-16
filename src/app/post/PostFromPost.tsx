@@ -13,7 +13,12 @@ export default function PostFromPost() {
           <div className="w-full h-80 bg-gray-200 rounded animate-pulse"></div>
         </div>
       ) : (
-        <p className="leading-8">{content}</p>
+        content?.map((paragraph) => (
+          <>
+            <p className="leading-8">{paragraph}</p>
+            <br />
+          </>
+        ))
       )}
     </>
   )

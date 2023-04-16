@@ -1534,13 +1534,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:^13.2.3":
-  version: 13.2.3
-  resolution: "@next/font@npm:13.2.3"
-  checksum: 241baec8c441448df2d7e7755eca4876e018a874555ddd22816585b50f03eac357f15576762ad1011b4a4c245e7dba9675ae7ec4289196943a51bc25fa203863
-  languageName: node
-  linkType: hard
-
 "@next/swc-android-arm-eabi@npm:13.2.3":
   version: 13.2.3
   resolution: "@next/swc-android-arm-eabi@npm:13.2.3"
@@ -2651,7 +2644,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "blog-princess@workspace:."
   dependencies:
-    "@next/font": ^13.2.3
     "@svgr/webpack": ^6.5.1
     "@tanstack/eslint-plugin-query": ^4.24.11
     "@tanstack/react-query": ^4.26.0

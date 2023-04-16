@@ -56,7 +56,7 @@ export default function PostForm() {
     })
     const result = await response.json()
 
-    setPostFromPost({ loading: false, content: result.new_text })
+    setPostFromPost({ loading: false, content: result.new_text.split('\n') })
   }
 
   return (

@@ -8,11 +8,11 @@ import {
   KEYWORDS,
   SUBJECT,
 } from '@/common/constants'
-import localFont from '@next/font/local'
+
 import Link from 'next/link'
 import { ReactNode } from 'react'
-
 import RecoilRoot from './RecoilRoot'
+import localFont from 'next/font/local'
 
 export const metadata = {
   title: '블프 - 블로그 프린세스',
