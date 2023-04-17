@@ -42,7 +42,7 @@ export default function ImageForm() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        num: imageCount,
+        num: +imageCount,
         text: post,
       }),
     })
@@ -57,6 +57,7 @@ export default function ImageForm() {
       <input
         className="p-2 border"
         min="0"
+        max="20"
         type="number"
         {...register('imageCount', { required: true })}
       />
